@@ -364,9 +364,20 @@
 				}
 			}
 			if (!empty($dir_fax)) {
+
+
+				
+
+
 				chdir($dir_fax);
 				//get fax resolution (ppi, W & H)
 					$resp = exec("tiffinfo ".$file_name.".tif | grep 'Resolution:'");
+
+					echo print_r($resp);
+					exit;
+
+
+
 					$resp_array = explode(' ', trim($resp));
 					$ppi_w = (int) $resp_array[1];
 					$ppi_h = (int) $resp_array[2];
